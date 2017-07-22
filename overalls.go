@@ -260,6 +260,7 @@ func walkDirectories(path string, walkFunc func(path string, info os.FileInfo) e
 	walkHelper = func(path string) error {
 		qualifiedPath, err := realpath.Realpath(path)
 		if err != nil {
+			fmt.Printf("\n**could not resolve path '%s'\n", path)
 			return err
 		}
 
